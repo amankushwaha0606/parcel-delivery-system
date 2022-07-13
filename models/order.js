@@ -17,8 +17,18 @@ const Order = sequelize.define('orders', {
         type: Sequelize.STRING,
         allowNull: false,
     },
+    selectDefaultPickupAddress: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true,
+        allowNull: false,
+    },
     dropAddress: {
         type: Sequelize.STRING,
+        allowNull: false,
+    },
+    selectDefaultDropAddress: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true,
         allowNull: false,
     },
     alterPhoneNumber: {
@@ -44,6 +54,7 @@ const Order = sequelize.define('orders', {
     price: {
         type: Sequelize.DOUBLE,
         allowNull: false,
+        defaultValue: -1.0,
     },
     trackId: {
         type: Sequelize.STRING,

@@ -32,9 +32,6 @@ Order.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 Order.hasMany(Feedback);
 Feedback.belongsTo(Order, { constraints: true, onDelete: 'CASCADE' });
 
-Order.hasMany(Coupon);
-Coupon.belongsTo(Order, { constraints: true, onDelete: 'CASCADE' });
-
 sequelize
     .sync()
     // .sync({ force: true })

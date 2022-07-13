@@ -34,6 +34,9 @@ module.exports.payment = (req, res, next) => {
         }).then((order) => {
             console.log(session.id);
             res.send({...session, trackId: session.id, order: order});
-        }).catch((err) => { console.log(err); });
+        }).catch((err) => {
+            console.log(err);
+            next(err);
+        });
     });
 };

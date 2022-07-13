@@ -26,5 +26,8 @@ module.exports.fillUserInfo = (req, res, next) => {
             console.log(result);
             res.json(result);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            next(err);
+        });
 }

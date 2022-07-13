@@ -38,7 +38,10 @@ module.exports.orderDetails = (req, res, next) => {
             console.log(order);
             res.json(order);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            next(err);
+        });
 }
 
 module.exports.priceCalculator = (req, res, next) => { 
@@ -69,7 +72,10 @@ module.exports.applyCoupen = (req, res, next) => {
             coup.destroy();
             return; 
         }
-    }).catch((err) => console.log(err));
+    }).catch(err => {
+        console.log(err);
+        next(err);
+    });
 }
 
 module.exports.trackOrder = (req, res, next) => { 
@@ -82,7 +88,10 @@ module.exports.trackOrder = (req, res, next) => {
         const orderStatus = OrderStatus.orderStatus(order.status);
         console.log(orderStatus);
         res.json({orderStatus: orderStatus});
-    })
+    }).catch(err => {
+        console.log(err);
+        next(err);
+    });
 }
 
 module.exports.orderFeedback = (req, res, next) => {
@@ -98,5 +107,8 @@ module.exports.orderFeedback = (req, res, next) => {
         console.log("You have successfully submitted feedback");
         console.log(feedback);
         res.json(feedback);
-    }).catch((err) => { console.log(err) });
+    }).catch(err => {
+        console.log(err);
+        next(err);
+    });
 }

@@ -27,12 +27,12 @@ module.exports.signup = (req, res, next) => {
             res.json(data);
         }).catch(err => {
             console.log("ERROR IN SIGN UP PAGE\n", err);
+            next(err);
         });
 }
 
 module.exports.signupPhoneVerification = (req, res, next) => { 
     console.log("Mobile verification");
-    // console.log(req.body);
     const email = req.body.email;
     const password = req.body.password;
     const phone = req.body.phone;
@@ -55,6 +55,7 @@ module.exports.signupPhoneVerification = (req, res, next) => {
                     res.json(data);
                 }).catch(err => {
                     console.log("Verification failed with code ----------------" + err);
+                    next(err);
                 });
         }).catch (err => {
             if (!err.statusCode) {
