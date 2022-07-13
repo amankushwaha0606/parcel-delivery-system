@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Stripe Payment Demo</title>
+
+<body>
+    <h3>Welcome to Payment Gateway</h3>
+    <form action="http://localhost:3000/payments/payment/?orderId=1" method="POST">
+        <script src="//checkout.stripe.com/v2/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_51LKDzzSCIVUUUpZKHycriontPzUTtcLJ4AW06B81nFKaBhJG3pK9VAuGqi9UMbL1BbYmDnzH438psENyvoOcbM6Q00YRmj7m9x"
+            data-amount="7000"
+            data-currency="usd"
+            data-name="Aman payment"
+            data-description="Testing payment method"
+            data-locale="auto">
+        </script>
+        <div>
+            <input type="hidden" name="orderId" value="1" id="orderId" />
+        </div>
+    </form>
+</body>
+
+</html>
