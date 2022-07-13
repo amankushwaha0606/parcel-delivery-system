@@ -9,43 +9,43 @@ const User = sequelize.define('users', {
         primaryKey: true,
         allowNull: false,
     },
-    // email: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    // },
-    // password: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    // },
-    // phone: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    // },
-    // name: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    //     defaultValue: "",
-    // },
-    // country: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    //     defaultValue: "",
-    // },
-    // state: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    //     defaultValue: "",
-    // },
-    // city: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    //     defaultValue: "",
-    // },
-    // zipCode: {
-    //     type: Sequelize.STRING,
-    //     allowNull: false,
-    //     defaultValue: "",
-    // },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    phone: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "",
+    },
+    country: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "",
+    },
+    state: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "",
+    },
+    city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "",
+    },
+    zipCode: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "",
+    },
 });
 
 module.exports = User;

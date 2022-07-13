@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.post('/signup', authController.signup);
 router.use('/signupPhoneVerification', authController.signupPhoneVerification);
-router.post('/login', authController.login);
+router.use('/login', authController.login);
 
 module.exports = router;

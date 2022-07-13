@@ -1,6 +1,6 @@
 const serviceId = "VA640bb0321796d0661f2ec7fbc1dac87b";
 const accountSid = "ACd8ba73b75c3bec07af37ccb000dc28e7";
-const authToken = "d07895784be84aba773d22bd77e26bc1";
+const authToken = "fbc69bd643939439e47bbc970732aed2";
 
 const client = require('twilio')(accountSid, authToken);
 const bcrypt = require('bcryptjs');
@@ -23,7 +23,7 @@ module.exports.signup = (req, res, next) => {
             to: phone, //+ phone,
             channel: 'sms', //req.query.channel,
         }).then(data => {
-            // console.log(data);
+            console.log(data);
             res.json(data);
         }).catch(err => {
             console.log("ERROR IN SIGN UP PAGE\n", err);
@@ -65,15 +65,16 @@ module.exports.signupPhoneVerification = (req, res, next) => {
 }
 
 module.exports.login = (req, res, next) => { 
-    const email = req.body.email;
+    // const email = req.body.email;
     const password = req.body.password;
     const phone = req.body.phone;
     let user1;
-    User.findOne({ phone: phone }).then(user => {
+    User.findOne({ where: { phone: phone } }).then(user => {
         if (!user) {
             const error = new Error("User not found");
             throw error;
         }
+        user1 = user;
         return bcrypt.compare(password, user.password);
     }).then(isEquals => {
         if (!isEquals) {
