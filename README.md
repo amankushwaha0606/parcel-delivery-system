@@ -131,6 +131,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Related Repositories
 
-- [Mini-Project Frontend](https://github.com/yourusername/mini-project-frontend): Frontend code for the Mini-Project web application.
+- [Basic Node API Project](https://github.com/amankushwaha0606/nodejs-api): Backend code for the Basic-Project application.
 
 ---
